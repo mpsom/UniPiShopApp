@@ -136,6 +136,7 @@ if st.button("Ολοκλήρωση αγοράς"):
 
         # Στέλνουμε στο backend
         response = requests.post("http://localhost:5050/purchase", json=purchase)
+        print(purchase)
 
         if response.status_code == 200:
             st.success("🧾 Η αγορά ολοκληρώθηκε και καταχωρήθηκε!")
