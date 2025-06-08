@@ -3,7 +3,7 @@ import requests
 
 
 def scraping_xal(name):
-    post_url = "http://localhost:5050/scrapingxal"
+    post_url = "http://localhost:5050/scrapingmarketin"
     post_data = name
     try:
 
@@ -13,7 +13,7 @@ def scraping_xal(name):
 
             return response.json()  # Επιστροφή αποτελεσμάτων στο UI (Τιμή, εικόνα και περιγραφή από Χαλκιαδάκη)
         else:
-            return "POST Request Failed", response.status_code
+            return "Δεν είναι δυνατή η πραγματοποίηση του αιτήματος", response.status_code
 
     except Exception as e:
         print(f"Connection failed: {e}")

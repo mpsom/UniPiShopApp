@@ -131,6 +131,8 @@ if st.button("Ολοκλήρωση αγοράς"):
             "items": st.session_state.cart.copy()
         }
 
+        # Κλήση module
+
         # Αποθήκευση στο τοπικό ιστορικό
         st.session_state.history.append(purchase)
 
