@@ -2,8 +2,8 @@ import streamlit as st
 import requests
 
 
-# Επικοινωνία με το backend για την αποστολή του τελικού καλαθιού
-def post_cart_and_get_aiprompt(cart):
+# Επικοινωνία με το backend για την αποστολή του τελικού καλαθιού και απάντηση
+def get_aiprompt(cart):
     product_names = list(cart["items"].keys())
     cart_str = ", ".join(product_names)
 
