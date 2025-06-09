@@ -137,7 +137,7 @@ if st.button("Ολοκλήρωση αγοράς"):
 
         # Κλήση module AI
         # Πρεπει να κανεις αυτο
-        # from app.ai_call import post_cart_and_get_aiprompt
+        # from app.get_aiprompt import get_aiprompt
         recipe, valuation = get_aiprompt(purchase)
         print(recipe,valuation)
 
