@@ -2,7 +2,7 @@ import streamlit as st
 import requests
 
 
-def scraping_markin(name):
+def scraping_baz(name):
     post_url = "http://localhost:5050/scrapingbazaar"
     post_data = name
     try:

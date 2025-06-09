@@ -4,6 +4,10 @@ import matplotlib.pyplot as plt
 from collections import defaultdict
 from datetime import datetime
 import matplotlib.pyplot as plt
+from app import ai_call
+from app.ai_call import post_cart_and_get_aiprompt
+from app.scraping_markin import scraping_markin
+from app.scraping_baz import scraping_baz
 
 debug_mode = True  # devmode
 
@@ -131,7 +135,11 @@ if st.button("Ολοκλήρωση αγοράς"):
             "items": st.session_state.cart.copy()
         }
 
-        # Κλήση module
+        # Κλήση module AI
+        # Πρεπει να κανεις αυτο
+        # from app.ai_call import post_cart_and_get_aiprompt
+        recipe, valuation = post_cart_and_get_aiprompt(purchase)
+        print(recipe,valuation)
 
         # Αποθήκευση στο τοπικό ιστορικό
         st.session_state.history.append(purchase)

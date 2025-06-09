@@ -9,14 +9,15 @@ def post_cart_and_get_aiprompt(cart):
 
     post_url = "http://127.0.0.1:5050/finalcart"
     post_data = cart_str
+    print("Θα σταλει αυτο:",post_data)
     try:
 
         response = requests.post(post_url,
                                  json=post_data)  # Αποστολή του τελικού καλαθιού στο b-end API με POST και αναμονή για απάντηση
         if response.status_code == 200:
             answers = response.json()
-            recipe = answers["a1"]
-            nutri_val = answers["a2"]
+            recipe = answers["Συνταγή"]
+            nutri_val = answers["Αξιολόγηση"]
             return recipe, nutri_val
         else:
             return "Δεν είναι δυνατή η πραγματοποίηση του αιτήματος", response.status_code
