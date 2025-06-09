@@ -2,14 +2,14 @@ import streamlit as st
 import requests
 
 
-# Επικοινωνία με το backend για την αποστολή του τελικού καλαθιού και απάντηση
+# Επικοινωνία με το backend για την αποστολή του τελικού καλαθιού και αποστολή απάντησης από το AI API
 def get_aiprompt(cart):
     product_names = list(cart["items"].keys())
     cart_str = ", ".join(product_names)
 
     post_url = "http://127.0.0.1:5050/finalcart"
     post_data = cart_str
-    print("Θα σταλει αυτο:",post_data)
+
     try:
 
         response = requests.post(post_url,
