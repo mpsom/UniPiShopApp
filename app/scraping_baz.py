@@ -14,7 +14,8 @@ def scraping_baz(name):
             image = data['Εικόνα']
             price = data['Τιμή']
             description = data['Περιγραφή']
-            return image, price, description  # Επιστροφή αποτελεσμάτων στο UI (tιμή, εικόνα και περιγραφή από MarketIn)
+
+            return image, price, description  # Επιστροφή αποτελεσμάτων στο UI (tιμή, εικόνα και περιγραφή από Bazzar)
         else:
             return "Δεν είναι δυνατή η πραγματοποίηση του αιτήματος", response.status_code
 
