@@ -1,4 +1,5 @@
 import streamlit as st
+import requests
 
 # Εμφάνιση περιεχομένων καλαθιού και δυνατότητα διαγραφής
 def render_cart():
@@ -26,5 +27,11 @@ def render_cart():
     # Διαγραφή προϊόντων που πατήθηκαν
     for key in remove_keys:
         del st.session_state.cart[key]
+        try:
+            requests.delete("http://localhost:5050/cart/deleteitem", json={
+                "product_name": key
+            })
+        except Exception as e:
+            st.error(f"⚠️ Αποτυχία διαγραφής στο backend: {e}")
 
     st.write(f"**Σύνολο: {total:.2f} €**")

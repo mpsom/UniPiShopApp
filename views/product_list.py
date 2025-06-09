@@ -1,4 +1,5 @@
 import streamlit as st
+import requests
 
 # Εμφάνιση λίστας προϊόντων με δυνατότητα προσθήκης στο καλάθι
 def render_product_list(filtered_products):
@@ -31,3 +32,13 @@ def render_product_list(filtered_products):
                             "category": product["category"]
                         }
                     st.success(f"✅ Προστέθηκαν {qty} τεμάχια από το {pname}")
+
+                    # Ενημέρωση backend->ΒΔ
+
+                    try:
+                        requests.put("http://localhost:5050/updatecart", json={
+                            "product_name": pname,
+                            "product": st.session_state.cart[pname]
+                        })  # 🔴
+                    except Exception as e:
+                        st.error(f"⚠️ Αποτυχία ενημέρωσης καλαθιού στο backend: {e}")
