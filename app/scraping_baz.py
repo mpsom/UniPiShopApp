@@ -14,10 +14,12 @@ def scraping_baz(name):
             image = data['Εικόνα']
             price = data['Τιμή']
             description = data['Περιγραφή']
-
-            return image, price, description  # Επιστροφή αποτελεσμάτων στο UI (tιμή, εικόνα και περιγραφή από Bazzar)
+            if image and price and description is not None:
+                return image, price, description  # Επιστροφή αποτελεσμάτων στο UI (tιμή, εικόνα και περιγραφή από Bazzar)
+            else:
+                return "Δεν βρέθηκε το προϊόν"
         else:
             return "Δεν είναι δυνατή η πραγματοποίηση του αιτήματος", response.status_code
 
     except Exception as e:
-        print(f"Connection failed: {e}")
+        print(f"Δεν βρέθηκε το προϊόν")

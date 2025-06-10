@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 from collections import defaultdict
 from services.api import (
     get_all_products, update_product, delete_product,
-    add_product, scrape_bazaar, scrape_marktin, scrape_xal
+new    add_product
 )
 
 # Developer Panel

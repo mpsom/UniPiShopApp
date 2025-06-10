@@ -24,3 +24,8 @@ def get_aiprompt(cart):
 
     except Exception as e:
         print(f"Connection failed: {e}")
+
+
+p=["Μακαρόνια MELLISA, Σάλτσα Barilla"]
+
+get_aiprompt(p)

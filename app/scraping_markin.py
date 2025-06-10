@@ -20,4 +20,4 @@ def scraping_markin(name):
             return "Δεν είναι δυνατή η πραγματοποίηση του αιτήματος", response.status_code
 
     except Exception as e:
-        print(f"Connection failed: {e}")
+        print(f"Δεν βρέθηκε το προϊόν")
